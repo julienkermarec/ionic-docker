@@ -59,6 +59,10 @@ RUN apt-get update &&  \
     rm -f gradle.zip && \
     chown -R root. /opt
 
+# Install zipalign    
+RUN apt-get update && yes | apt-get dist-upgrade && yes | apt-get install zipalign    
+
+
 # Setup environment
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:/opt/gradle/gradle-${GRADLE_VERSION}/bin
 
